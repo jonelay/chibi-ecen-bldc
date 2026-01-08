@@ -5,6 +5,11 @@
 ![Board Status](https://img.shields.io/badge/status-prototype-yellow)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
+<p align="center">
+  <img src="media/chibi-ecen-bldc-front-transparent.png" alt="Board Front" width="45%">
+  <img src="media/chibi-ecen-bldc-back-transparent.png" alt="Board Back" width="45%">
+</p>
+
 ## Overview
 
 Chibi-ECEN-BLDC is a three-phase brushless DC motor driver PCB that was designed as a learning project for ECEN5003 (PCB Design) at CU Boulder in Fall 2014. The board is intended as a test platform for developing field-oriented control (FOC) software for a 480-watt brushless DC motor.
@@ -80,7 +85,9 @@ Layout techniques explored include push-and-plow routing, teardrop vias, and con
 │   ├── pinouts.md                  # STM32 pin assignments
 │   └── connectors.md               # Connector pinout reference
 ├── datasheets/                 # Key component datasheets
-└── media/                      # Board photographs (to be added)
+└── media/                      # Board photographs
+    ├── chibi-ecen-bldc-front-transparent.png
+    └── chibi-ecen-bldc-back-transparent.png
 ```
 
 ## Getting Started
