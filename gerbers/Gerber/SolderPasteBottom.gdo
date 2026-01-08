@@ -1,0 +1,14 @@
+*
+G04 Job   : E:\PCBDESIGN\PROJECT\XDX\JOHNENGLISH\JOHNENGLISH\PCB\Board1.pcb*
+G04 User  : BES-WIN7-VM:BES*
+G04 Layer : SolderPasteBottom.gdo*
+G04 Date  : Sun Nov 23 15:41:45 2014*
+G04 Mentor Graphics Example Gerber Output Definition*
+%ICAS*%
+%MOIN*%
+%FSLAX24Y24*%
+%OFA0.0000B0.0000*%
+G90*
+G74*
+G01*
+M02*
