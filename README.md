@@ -16,7 +16,7 @@ Chibi-ECEN-BLDC is a three-phase brushless DC motor driver PCB intended as a tes
 
 The design was inspired by Benjamin Vedder's open-source BLDC controller ([VESC](http://vedder.se/2014/01/a-custom-bldc-motor-controller/), v4, circa 2014), with customizations for this specific use case and a completely redesigned physical layout.
 
-⚠️ **Educational Prototype** - This was a student learning project from 2014 focused on PCB layout techniques for power electronics. While the design is complete and boards were fabricated, this should be considered a learning exercise rather than a production-ready design. Firmware development was not released as part of the project.
+⚠️ **Educational Prototype** - This was a graduate student project from 2014 focused on PCB layout techniques for power electronics. While the design is complete and boards were fabricated, this should be considered a learning exercise rather than a production-ready design. Firmware development was not released as part of the project.
 
 ## Key Features
 
@@ -53,9 +53,9 @@ Layout techniques explored include push-and-plow routing, teardrop vias, and con
 ## Design Tools
 
 - **PCB Design:** Mentor Graphics Xpedition XDX (EEVX.1, 2014)
-- **Schematic:** Xpedition (source in EDIF format)
+- **Schematic:** Xpedition
 - **MCU Configuration:** STM32CubeMX
-- **Simulation:** LTspice (buck converter analysis)
+- **Simulation:** LTspice
 
 ## Repository Contents
 
