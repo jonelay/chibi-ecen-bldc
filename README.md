@@ -12,20 +12,13 @@
 
 ## Overview
 
-Chibi-ECEN-BLDC is a three-phase brushless DC motor driver PCB that was designed as a learning project for ECEN5003 (PCB Design) at CU Boulder in Fall 2014. The board is intended as a test platform for developing field-oriented control (FOC) software for a 480-watt brushless DC motor.
+Chibi-ECEN-BLDC is a three-phase brushless DC motor driver PCB intended as a test platform for developing field-oriented control (FOC) software for a 480-watt brushless DC motor.
 
 The design was inspired by Benjamin Vedder's open-source BLDC controller ([VESC](http://vedder.se/2014/01/a-custom-bldc-motor-controller/), v4, circa 2014), with customizations for this specific use case and a completely redesigned physical layout.
 
-## Specifications
+⚠️ **Educational Prototype** - This was a student learning project from 2014 focused on PCB layout techniques for power electronics. While the design is complete and boards were fabricated, this should be considered a learning exercise rather than a production-ready design. Firmware development was not released as part of the project.
 
-- **Input Voltage:** 48 VDC (nominal)
-- **Output Current:** 10 Amps maximum (bus input average)
-- **Switching Frequency:** 20 kHz
-- **Microcontroller:** STM32F405RGT6 (ARM Cortex-M4, 168 MHz)
-- **Driver IC:** DRV8302 three-phase bridge pre-driver with integrated buck converter
-- **PCB:** 4-layer design optimized for thermal management and high-current routing
-
-## Features
+## Key Features
 
 - Three-phase BLDC motor control with field-oriented control capability
 - Integrated DRV8302 driver with 5V buck converter and current sensing
@@ -37,17 +30,14 @@ The design was inspired by Benjamin Vedder's open-source BLDC controller ([VESC]
 - Heatsink mounting for D2PAK power MOSFETs
 - RGB status LED and configuration DIP switches
 
-## Hardware Design
+## Technical Specification
 
-### Schematic Organization
-
-The schematic is divided into five sheets:
-
-1. **Microcontroller** - STM32F405 ARM Cortex-M4 and supporting components (timing, decoupling)
-2. **Driver** - DRV8302 three-phase bridge pre-driver with integrated buck converter
-3. **Three-Phase Bridge** - Power electronics, current sense resistors, phase voltage dividers
-4. **Power Input** - Reverse polarity protection, over-voltage protection, bulk capacitance, 3.3V regulator
-5. **User Interface** - Buttons (Forward, Reverse, Reset), DIP switches, RGB LED, connectors
+- **Input Voltage:** 48 VDC (nominal)
+- **Output Current:** 10 Amps maximum (bus input average)
+- **Switching Frequency:** 20 kHz
+- **Microcontroller:** STM32F405RGT6 (ARM Cortex-M4, 168 MHz)
+- **Driver IC:** DRV8302 three-phase bridge pre-driver with integrated buck converter
+- **PCB:** 4-layer design optimized for thermal management and high-current routing
 
 ### Key Design Challenges
 
@@ -60,9 +50,12 @@ The primary focus of this project was layout for a high-current system and manag
 
 Layout techniques explored include push-and-plow routing, teardrop vias, and conductive copper shapes for optimizing power pad connections.
 
-## Project Status
+## Design Tools
 
-⚠️ **Educational Prototype** - This was a student learning project from 2014 focused on PCB layout techniques for power electronics. While the design is complete and boards were fabricated, this should be considered a learning exercise rather than a production-ready design. Firmware development was not completed as part of the original project.
+- **PCB Design:** Mentor Graphics Xpedition XDX (EEVX.1, 2014)
+- **Schematic:** Xpedition (source in EDIF format)
+- **MCU Configuration:** STM32CubeMX
+- **Simulation:** LTspice (buck converter analysis)
 
 ## Repository Contents
 
@@ -92,7 +85,7 @@ Layout techniques explored include push-and-plow routing, teardrop vias, and con
 
 ## Getting Started
 
-### Manufacturing
+### Manufacturing (not recommended)
 
 Gerber files and drill files are available in `gerbers/`. The PCB is a 4-layer design:
 - Layer 1: Top copper (signal + power)
@@ -114,40 +107,21 @@ The complete BOM is available in `hardware/bom.csv` and `hardware/bom.ods`. Key 
 - Power MOSFETs and Schottky diodes (D2PAK)
 - Supporting passives and connectors
 
-## Design Tools
-
-- **PCB Design:** Mentor Graphics Xpedition XDX (EEVX.1, 2014)
-- **Schematic:** Xpedition (source in EDIF format)
-- **MCU Configuration:** STM32CubeMX
-- **Simulation:** LTspice (buck converter analysis)
 
 Note: The Xpedition source files are in a legacy format. The PDF schematic in `hardware/` is recommended for viewing.
-
-## Inspiration and References
-
-This design was inspired by Benjamin Vedder's VESC (Vedder Electronic Speed Controller) project:
-- [Original VESC Blog Post](http://vedder.se/2014/01/a-custom-bldc-motor-controller/) (2014)
-- [VESC GitHub Repository](https://github.com/vedderb/bldc)
-
-The Chibi-ECEN-BLDC design takes the VESC concept and explores different layout approaches, with expanded BOM and customizations for specific motor control applications.
-
 
 ## License
 
 This project is released under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+Copyright (c) 2014 Jone Lay
+
 You are free to use, modify, and distribute this design for any purpose, with attribution.
 
-## Contributing
+## Open Source Hardware
 
-While this is a historical/archival project, contributions are welcome:
-- PCB layout improvements or suggestions
-- Firmware implementations
-- Testing results if you build the hardware
-- Documentation corrections or clarifications
+This project is open source hardware. The design files, manufacturing files, and documentation are freely available for educational and non-commercial use.
 
-Please open an issue or pull request on GitHub.
+## Disclaimer
 
----
-
-*This project is shared for educational purposes and as a portfolio piece. If you create derivative designs based on this project, please test thoroughly and implement proper safety measures for high-voltage/high-current systems.*
+*This project is shared for educational purposes and as a portfolio piece. It was a graduate student project from 2014. While care was taken in the design and the hardware was successfully manufactured and tested, this is not a production-ready design. Use at your own risk. Motor Control and 48V power systems must be designed with extreme care for safety - this design is presented for educational purposes only.
